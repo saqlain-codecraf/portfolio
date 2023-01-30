@@ -1,470 +1,1464 @@
-<!DOCTYPE html>
-<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Gaama Tech</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="Gaama" href="gaama.png">
+        <link rel="shortcut icon" type="image/png" href="gaama.png">
+        <!--Google Font link-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
 
-<head>
-    <meta charset="utf-8">
-    <title>Gaama</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-    <link rel="shortcut icon" href="gaama.png" type="image/x-icon">
-    <link rel="icon" href="gaama.png" type="image/x-icon">
-    <script nonce="e38c1d2f-b478-44bc-9365-4e2fe4748e22">
-        (function(w, d) {
-            ! function(f, g, h, i) {
-                f[h] = f[h] || {};
-                f[h].executed = [];
-                f.zaraz = {
-                    deferred: [],
-                    listeners: []
-                };
-                f.zaraz.q = [];
-                f.zaraz._f = function(j) {
-                    return function() {
-                        var k = Array.prototype.slice.call(arguments);
-                        f.zaraz.q.push({
-                            m: j,
-                            a: k
-                        })
-                    }
-                };
-                for (const l of ["track", "set", "debug"]) f.zaraz[l] = f.zaraz._f(l);
-                f.zaraz.init = () => {
-                    var m = g.getElementsByTagName(i)[0],
-                        n = g.createElement(i),
-                        o = g.getElementsByTagName("title")[0];
-                    o && (f[h].t = g.getElementsByTagName("title")[0].text);
-                    f[h].x = Math.random();
-                    f[h].w = f.screen.width;
-                    f[h].h = f.screen.height;
-                    f[h].j = f.innerHeight;
-                    f[h].e = f.innerWidth;
-                    f[h].l = f.location.href;
-                    f[h].r = g.referrer;
-                    f[h].k = f.screen.colorDepth;
-                    f[h].n = g.characterSet;
-                    f[h].o = (new Date).getTimezoneOffset();
-                    if (f.dataLayer)
-                        for (const s of Object.entries(Object.entries(dataLayer).reduce(((t, u) => ({ ...t[1],
-                                ...u[1]
-                            }))))) zaraz.set(s[0], s[1], {
-                            scope: "page"
-                        });
-                    f[h].q = [];
-                    for (; f.zaraz.q.length;) {
-                        const v = f.zaraz.q.shift();
-                        f[h].q.push(v)
-                    }
-                    n.defer = !0;
-                    for (const w of [localStorage, sessionStorage]) Object.keys(w || {}).filter((y => y.startsWith("_zaraz_"))).forEach((x => {
-                        try {
-                            f[h]["z_" + x.slice(7)] = JSON.parse(w.getItem(x))
-                        } catch {
-                            f[h]["z_" + x.slice(7)] = w.getItem(x)
-                        }
-                    }));
-                    n.referrerPolicy = "origin";
-                    n.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(f[h])));
-                    m.parentNode.insertBefore(n, m)
-                };
-                ["complete", "interactive"].includes(g.readyState) ? zaraz.init() : f.addEventListener("DOMContentLoaded", zaraz.init)
-            }(w, d, "zarazData", "script");
-        })(window, document);
-    </script>
-</head>
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
-<body id="top">
-    <header class="s-header">
-        <div class="header-logo"> <a class="site-logo" href="index.html"> <img src="gaama.png" alt=""> </a></div>
-        <nav class="header-nav"><a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
-            <div class="header-nav__content">
-                <h3>Navigation</h3>
-                <ul class="header-nav__list">
-                    <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
-                    <li><a class="smoothscroll" href="#about" title="about">About</a></li>
-                    <li><a class="smoothscroll" href="#services" title="services">Services</a></li>
-                    <li><a class="smoothscroll" href="#works" title="works">Works</a></li>
-                    <li><a class="smoothscroll" href="#clients" title="clients">Clients</a></li>
-                    <li><a class="smoothscroll" href="#contact" title="contact">Contact</a></li>
-                </ul>
-                <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
-                <ul class="header-nav__social">
-                    <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li> <a href="#"><i class="fa fa-behance"></i></a></li>
-                    <li> <a href="#"><i class="fa fa-dribbble"></i></a></li>
-                </ul>
-            </div>
-        </nav><a class="header-menu-toggle" href="#0"> <span class="header-menu-text">Menu</span> <span class="header-menu-icon"></span> </a></header>
-    <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="images/hero-bg.jpg"
-        data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-        <div class="overlay"></div>
-        <div class="shadow-overlay"></div>
-        <div class="home-content">
-            <div class="row home-content__main">
-                <h3>Welcome to GAAMA Tech</h3>
-                <h1> We are a creative group <br> of people who design <br> influential brands and <br> digital experiences.</h1>
-                <div class="home-content__buttons"> <a href="#contact" class="smoothscroll btn btn--stroke"> Start a Project </a> <a href="#about" class="smoothscroll btn btn--stroke"> More About Us </a></div>
-            </div>
-            <div class="home-content__scroll"> <a href="#about" class="scroll-link smoothscroll"> <span>Scroll Down</span> </a></div>
-            <div class="home-content__line"></div>
+
+        <!--For Plugins external css-->
+        <link rel="stylesheet" href="assets/css/plugins.css" />
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+
+        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="200">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class='preloader'>
+            <div class='loaded'>&nbsp;</div>
         </div>
-        <ul class="home-social">
-            <li> <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a></li>
-            <li> <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a></li>
-            <li> <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
-            <li> <a href="#0"><i class="fa fa-behance" aria-hidden="true"></i><span>Behance</span></a></li>
-            <li> <a href="#0"><i class="fa fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a></li>
-        </ul>
-    </section>
-    <section id='about' class="s-about">
-        <div class="row section-header has-bottom-sep" data-aos="fade-up">
-            <div class="col-full">
-                <h3 class="subhead subhead--dark">Hello There</h3>
-                <h1 class="display-1 display-1--light">We Are Gaama</h1>
-            </div>
-        </div>
-        <div class="row about-desc" data-aos="fade-up">
-            <div class="col-full">
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-            </div>
-        </div>
-        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
-            <div class="col-block stats__col ">
-                <div class="stats__count">127</div>
-                <h5>Awards Received</h5>
-            </div>
-            <div class="col-block stats__col">
-                <div class="stats__count">1505</div>
-                <h5>Cups of Coffee</h5>
-            </div>
-            <div class="col-block stats__col">
-                <div class="stats__count">109</div>
-                <h5>Projects Completed</h5>
-            </div>
-            <div class="col-block stats__col">
-                <div class="stats__count">102</div>
-                <h5>Happy Clients</h5>
-            </div>
-        </div>
-        <div class="about__line"></div>
-    </section>
-    <section id='services' class="s-services">
-        <div class="row section-header has-bottom-sep" data-aos="fade-up">
-            <div class="col-full">
-                <h3 class="subhead">What We Do</h3>
-                <h1 class="display-2">We’ve got everything you need to launch and grow your business</h1>
-            </div>
-        </div>
-        <div class="row services-list block-1-2 block-tab-full">
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon"> <i class="icon-paint-brush"></i></div>
-                <div class="service-text">
-                    <h3 class="h2">Brand Identity</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.</p>
-                </div>
-            </div>
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon"> <i class="icon-group"></i></div>
-                <div class="service-text">
-                    <h3 class="h2">Illustration</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.</p>
-                </div>
-            </div>
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon"> <i class="icon-megaphone"></i></div>
-                <div class="service-text">
-                    <h3 class="h2">Marketing</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.</p>
-                </div>
-            </div>
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon"> <i class="icon-earth"></i></div>
-                <div class="service-text">
-                    <h3 class="h2">Web Design</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.</p>
-                </div>
-            </div>
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon"> <i class="icon-cube"></i></div>
-                <div class="service-text">
-                    <h3 class="h2">Packaging Design</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.</p>
-                </div>
-            </div>
-            <div class="col-block service-item" data-aos="fade-up">
-                <div class="service-icon"><i class="icon-lego-block"></i></div>
-                <div class="service-text">
-                    <h3 class="h2">Web Development</h3>
-                    <p>Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id='works' class="s-works">
-        <div class="intro-wrap">
-            <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up">
-                <div class="col-full">
-                    <h3 class="subhead">Recent Works</h3>
-                    <h1 class="display-2 display-2--light">We love what we do, check out some of our latest works</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row works-content">
-            <div class="col-full masonry-wrap">
-                <div class="masonry">
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-                            <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-shutterbug.jpg" class="thumb-link" title="Shutterbug" data-size="1050x700"> <img src="images/portfolio/lady-shutterbug.jpg" srcset="images/portfolio/lady-shutterbug.jpg 1x, images/portfolio/lady-shutterbug@2x.jpg 2x" alt=""> </a></div>
-                            <div
-                                class="item-folio__text">
-                                <h3 class="item-folio__title"> Shutterbug</h3>
-                                <p class="item-folio__cat"> Branding</p>
-                        </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
-                        <div class="item-folio__caption">
-                            <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
+
+        <div class="culmn">
+            <header id="main_menu" class="header navbar-fixed-top">            
+                <div class="main_menu_bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="nave_menu">
+                                <nav class="navbar navbar-default">
+                                    <div class="container-fluid">
+                                        <!-- Brand and toggle get grouped for better mobile display -->
+                                        <div class="navbar-header">
+                                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                            <a class="navbar-brand" href="#home" style="max-width: 46%;
+    height: fit-content;">
+                                                <img src="logo.png"/>
+                                            </a>
+                                        </div>
+
+                                        <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+
+                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                            <ul class="nav navbar-nav navbar-right">
+                                                <li><a href="#home">HOME</a></li>
+                                                <li><a href="#service">Service</a></li>
+                                                <li><a href="#team">TEAMS</a></li>
+                                                <!-- <li><a href="#portfolio">WORKS</a></li> -->
+                                                <li><a href="#testimonial">Testimonial</a></li>
+                                                <li><a href="#contact">CONTACT</a></li>
+
+
+                                                <li>
+                                                    <a href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="glyphicon glyphicon-search"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <form class="navbar-form" role="search">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control" placeholder="Search">
+                                                                </div>
+                                                            </form>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+
+
+                                        </div>
+
+                                    </div>
+                                </nav>
+                            </div>	
                         </div>
+
                     </div>
+
                 </div>
-                <div class="masonry__brick" data-aos="fade-up">
-                    <div class="item-folio">
-                        <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-woodcraft.jpg" class="thumb-link" title="Woodcraft" data-size="1050x700"> <img src="images/portfolio/woodcraft.jpg" srcset="images/portfolio/woodcraft.jpg 1x, images/portfolio/woodcraft@2x.jpg 2x" alt=""> </a></div>
-                        <div
-                            class="item-folio__text">
-                            <h3 class="item-folio__title"> Woodcraft</h3>
-                            <p class="item-folio__cat"> Web Design</p>
-                    </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
-                    <div class="item-folio__caption">
-                        <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="masonry__brick" data-aos="fade-up">
-                <div class="item-folio">
-                    <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-beetle.jpg" class="thumb-link" title="The Beetle Car" data-size="1050x700"> <img src="images/portfolio/the-beetle.jpg" srcset="images/portfolio/the-beetle.jpg 1x, images/portfolio/the-beetle@2x.jpg 2x" alt=""> </a></div>
-                    <div
-                        class="item-folio__text">
-                        <h3 class="item-folio__title"> The Beetle</h3>
-                        <p class="item-folio__cat"> Web Development</p>
-                </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
-                <div class="item-folio__caption">
-                    <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                </div>
-            </div>
-        </div>
-        <div class="masonry__brick" data-aos="fade-up">
-            <div class="item-folio">
-                <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-grow-green.jpg" class="thumb-link" title="Grow Green" data-size="1050x700"> <img src="images/portfolio/grow-green.jpg" srcset="images/portfolio/grow-green.jpg 1x, images/portfolio/grow-green@2x.jpg 2x" alt=""> </a></div>
-                <div
-                    class="item-folio__text">
-                    <h3 class="item-folio__title"> Grow Green</h3>
-                    <p class="item-folio__cat"> Branding</p>
-            </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
-            <div class="item-folio__caption">
-                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-            </div>
-        </div>
-        </div>
-        <div class="masonry__brick" data-aos="fade-up">
-            <div class="item-folio">
-                <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-guitarist.jpg" class="thumb-link" title="Guitarist" data-size="1050x700"> <img src="images/portfolio/guitarist.jpg" srcset="images/portfolio/guitarist.jpg 1x, images/portfolio/guitarist@2x.jpg 2x" alt="" loading="lazy"> </a></div>
-                <div
-                    class="item-folio__text">
-                    <h3 class="item-folio__title"> Guitarist</h3>
-                    <p class="item-folio__cat"> Web Design</p>
-            </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
-            <div class="item-folio__caption">
-                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-            </div>
-        </div>
-        </div>
-        <div class="masonry__brick" data-aos="fade-up">
-            <div class="item-folio">
-                <div class="item-folio__thumb"> <a href="images/portfolio/gallery/g-palmeira.jpg" class="thumb-link" title="Palmeira" data-size="1050x700"> <img src="images/portfolio/palmeira.jpg" srcset="images/portfolio/palmeira.jpg 1x, images/portfolio/palmeira@2x.jpg 2x" alt="" loading="lazy"> </a></div>
-                <div
-                    class="item-folio__text">
-                    <h3 class="item-folio__title"> Palmeira</h3>
-                    <p class="item-folio__cat"> Web Design</p>
-            </div><a href="https://www.behance.net/" class="item-folio__project-link" title="Project link"> <i class="icon-link"></i> </a>
-            <div class="item-folio__caption">
-                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-            </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-    </section>
-    <section id="clients" class="s-clients">
-        <div class="row section-header" data-aos="fade-up">
-            <div class="col-full">
-                <h3 class="subhead">Our Clients</h3>
-                <h1 class="display-2">Gaama has been honored to partner up with these clients</h1>
-            </div>
-        </div>
-        <div class="row clients-outer" data-aos="fade-up">
-            <div class="col-full">
-                <div class="clients"><a href="#0" title="" class="clients__slide"><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/clients/apple.png" loading="lazy" /></a> <a href="#0" title="" class="clients__slide"><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/clients/atom.png" loading="lazy" /></a>                    <a href="#0" title="" class="clients__slide"><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/clients/blackberry.png" loading="lazy" /></a> <a href="#0" title="" class="clients__slide"><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/clients/dropbox.png" loading="lazy" /></a>                    <a href="#0" title="" class="clients__slide"><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/clients/envato.png" loading="lazy" /></a> <a href="#0" title="" class="clients__slide"><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/clients/firefox.png" loading="lazy" /></a>                    <a href="#0" title="" class="clients__slide"><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/clients/joomla.png" loading="lazy" /></a> <a href="#0" title="" class="clients__slide"><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/clients/magento.png" loading="lazy" /></a></div>
-            </div>
-        </div>
-        <div class="row clients-testimonials" data-aos="fade-up">
-            <div class="col-full">
-                <div class="testimonials">
-                    <div class="testimonials__slide">
-                        <p>Qui ipsam temporibus quisquam vel. Maiores eos cumque distinctio nam accusantium ipsum. Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium quos qui praesentium corpori. Excepturi nam cupiditate
-                            culpa doloremque deleniti repellat.</p><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar"
-                            loading="lazy">
-                        <div class="testimonials__info"> <span class="testimonials__name">Irfan Ali </span> <span class="testimonials__pos">CEO, Gaama</span></div>
-                    </div>
-                    <div class="testimonials__slide">
-                        <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/avatars/user-05.jpg"
-                            alt="Author image" class="testimonials__avatar" loading="lazy">
-                        <div class="testimonials__info"> <span class="testimonials__name">Saqlain Mushtaq</span> <span class="testimonials__pos">MD, Gaama</span></div>
-                    </div>
-                    <div class="testimonials__slide">
-                        <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam. Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p><img src="/cdn-cgi/mirage/3b66ed344dcaefdc62a2611adcaaec77b53afc3913a1bbdd44c96f12198a93c2/1280/theme/glint/images/avatars/user-02.jpg"
-                            alt="Author image" class="testimonials__avatar" loading="lazy">
-                        <div class="testimonials__info"> <span class="testimonials__name">Kazim Hassan</span> <span class="testimonials__pos">Team Lead, Gaama</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="s-contact">
-        <div class="overlay"></div>
-        <div class="contact__line"></div>
-        <div class="row section-header" data-aos="fade-up">
-            <div class="col-full">
-                <h3 class="subhead">Contact Us</h3>
-                <h1 class="display-2 display-2--light">Reach out for a new project or just say hello</h1>
-            </div>
-        </div>
-        <div class="row contact-content" data-aos="fade-up">
-            <div class="contact-primary">
-                <h3 class="h6">Send Us A Message</h3>
-                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
-                    <fieldset>
-                        <div class="form-field"> <input name="contactName" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="" aria-required="true" class="full-width"></div>
-                        <div class="form-field"> <input name="contactEmail" type="email" id="contactEmail" placeholder="Your Email" value="" required="" aria-required="true" class="full-width"></div>
-                        <div class="form-field"> <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width"></div>
-                        <div class="form-field"><textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea></div>
-                        <div class="form-field"> <button class="full-width btn--primary">Submit</button>
-                            <div class="submit-loader">
-                                <div class="text-loader">Sending...</div>
-                                <div class="s-loader">
-                                    <div class="bounce1"></div>
-                                    <div class="bounce2"></div>
-                                    <div class="bounce3"></div>
+            </header> <!--End of header -->
+
+
+
+
+
+            <section id="home" class="home">
+                <div class="overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                                <div class="main_home_slider text-center">
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1>WELCOME TO OUR GAAMA TECH</h1>
+                                            <p>We Make Awesome Webiste For Your Business</p>
+                                            <div class="home_btn">
+                                                <a href="#" class="btn btn-primary">LEARN MORE</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1>WELCOME TO OUR GAAMA TECH</h1>
+                                            <p>We Make Awesome Web Application For Your Business</p>
+                                            <div class="home_btn">
+                                                <a href="#" class="btn btn-primary">LEARN MORE</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1>WELCOME TO OUR GAAMA TECH</h1>
+                                            <p>We Make Awesome Design For Your Brand</p>
+                                            <div class="home_btn">
+                                                <a href="#" class="btn btn-primary">LEARN MORE</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
-                </form>
-                <div class="message-warning"> Something went wrong. Please try again.</div>
-                <div class="message-success"> Your message was sent, thank you!<br></div>
-            </div>
-            <div class="contact-secondary">
-                <div class="contact-info">
-                    <h3 class="h6 hide-on-fullwidth">Contact Info</h3>
-                    <div class="cinfo">
-                        <h5>Where to Find Us</h5>
-                        <p> 1600 Amphitheatre Parkway<br> Mountain View, CA<br> 94043 US</p>
                     </div>
-                    <div class="cinfo">
-                        <h5>Email Us At</h5>
-                        <p> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="43202c2d3722203703242f2a2d37302a37266d202c2e">[email&#160;protected]</a><br> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="41282f272e01262d282f35322835246f222e2c">[email&#160;protected]</a></p>
-                    </div>
-                    <div class="cinfo">
-                        <h5>Call Us At</h5>
-                        <p> Phone: (+63) 555 1212<br> Mobile: (+63) 555 0100<br> Fax: (+63) 555 0101</p>
-                    </div>
-                    <ul class="contact-social">
-                        <li> <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-                        <li> <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="row footer-main">
-            <div class="col-six tab-full left footer-desc">
-                <div class="footer-logo"></div> Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor
-                accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.</div>
-            <div class="col-six tab-full right footer-subscribe">
-                <h4>Get Notified</h4>
-                <p>Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia. Ut itaque enim optio ut excepturi deserunt iusto porro.</p>
-                <div class="subscribe-form">
-                    <form id="mc-form" class="group" novalidate="true"> <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Email Address" required=""> <input type="submit" name="subscribe" value="Subscribe"> <label for="mc-email" class="subscribe-message"></label></form>
-                </div>
-            </div>
-        </div>
-        <div class="row footer-bottom">
-            <div class="col-twelve">
-                <div class="copyright"> <span>© Copyright Gaama Tech 2022</span></div>
-                <div class="go-top"> <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a></div>
-            </div>
-        </div>
-    </footer>
-    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
+            </section>
+
+
+
+            <section id="service" class="service">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_service_area">
+                                <div class="main_service_content">
+                                    <div class="service_tabe">
+                                        <!-- Nav tabs -->
+                                        <ul class="service_tabe_menu nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#webdesign" aria-controls="webdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />WEB DESIGN</a></li>
+                                            <li role="presentation"><a href="#appdesign" aria-controls="appdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />APP DESIGN</a></li>
+                                            <li role="presentation"><a href="#graphicdesign" aria-controls="graphicdesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />GRAPHIC DESIGN</a></li>
+                                            <li role="presentation"><a href="#gamedesign" aria-controls="gamedesign" role="tab" data-toggle="tab"><i class="fa fa-map-marker"></i> <br />GAME DESIGN</a></li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="webdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>WEB DESIGN One</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page 
+                                                                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
+                                                                    distribution of letters, as opposed to using 'Content here, content here', making it 
+                                                                    look like readable English. Many desktop publishing packages and web page editors now use 
+                                                                    Lorem Ipsum as their default model text, and a search for 'lorem ipsum' </p>
+
+                                                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="assets/images/stab1.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="appdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>WEB DESIGN Two</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page 
+                                                                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
+                                                                    distribution of letters, as opposed to using 'Content here, content here', making it 
+                                                                    look like readable English. Many desktop publishing packages and web page editors now use 
+                                                                    Lorem Ipsum as their default model text, and a search for 'lorem ipsum' </p>
+
+                                                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="assets/images/featureslid1.jpg" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="graphicdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>WEB DESIGN Three</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page 
+                                                                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
+                                                                    distribution of letters, as opposed to using 'Content here, content here', making it 
+                                                                    look like readable English. Many desktop publishing packages and web page editors now use 
+                                                                    Lorem Ipsum as their default model text, and a search for 'lorem ipsum' </p>
+
+                                                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="assets/images/stab1.png" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="gamedesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>WEB DESIGN Four</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page 
+                                                                    when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal 
+                                                                    distribution of letters, as opposed to using 'Content here, content here', making it 
+                                                                    look like readable English. Many desktop publishing packages and web page editors now use 
+                                                                    Lorem Ipsum as their default model text, and a search for 'lorem ipsum' </p>
+
+                                                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="assets/images/featureslid1.jpg" alt="" />
+                                                            </div>
+                                                        </div>
+                                                        <!--                                                        <div id="pentagon"></div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="preloader">
-        <div id="loader">
-            <div class="line-scale-pulse-out">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="js/jquery-3.6.1.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"78d8b9176ef4c914","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.3","si":100}'
-        crossorigin="anonymous"></script>
-</body>
+            </section>
 
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_features_area sections">
+                                <div class="head_title">
+                                    <h3>FEATURED WORK</h3>
+                                    <div class="separator"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="main_features_content">
+
+                                        <div class="col-sm-6">
+
+                                            <div class="single_features_slide">
+                                                <div class="single_ft_s_item">
+                                                    <img src="assets/images/featureslid1.jpg" alt="" />
+                                                </div>
+                                                <div class="single_ft_s_item">
+                                                    <img src="assets/images/featureslid1.jpg" alt="" />
+                                                </div>
+                                                <div class="single_ft_s_item">
+                                                    <img src="assets/images/featureslid1.jpg" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="single_features_text">
+                                                <h4>HAND WITH A WATCH</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                                    when an unknown printer took a galley of type and scrambled </p>
+
+                                                <ul>
+                                                    <li><span>Client:</span> Dadit Lorm</li>
+                                                    <li><span>Deivered:</span> Sunday, 15 August, 2015</li>
+                                                    <li><span>Tags:</span> Hand, Watch, Black, Tree</li>
+                                                </ul>
+
+                                                <a href="" class="btn">LAUNCH NOW</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="video" class="video text-center wow fadeIn"  data-wow-duration="2s" data-wow-dealy="1.5s">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_video">
+                                <div class="col-sm-12">
+                                    <div class="icon">
+                                        <a href="https://www.youtube.com/embed/_l6CQRHIGyg" class="youtube-media"><img src="assets/images/play.png" alt="play-icon" /></a>
+                                        <h3>WATCH OUR INTRO</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="main_about_area sections">
+                            <div class="col-sm-12">
+
+                                <div class="main_about_content">
+                                    <div class="row">
+
+                                        <div class="col-sm-7 wow fadeInRight" data-wow-duration="700ms">
+                                            <div class="single_about_right_content">
+                                                <div class="head_title">
+                                                    <h3>ABOUT LOGIC</h3>
+                                                    <div class="separator"></div>
+                                                </div>
+
+                                                <div class="single_about">
+                                                    <div class="single_ab_icon">
+                                                        <div class="ab_border_right"></div>
+                                                        <i class="fa fa-coffee"></i>
+                                                    </div>
+                                                    <div class="single_ab_text">
+                                                        <h3>RESPONSIVE DESIGN</h3>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                            Lorem Ipsum has been the industry's standard dummy text</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single_about">
+                                                    <div class="single_ab_icon">
+
+                                                        <i class="fa fa-paint-brush"></i>
+                                                    </div>
+                                                    <div class="single_ab_text">
+                                                        <h3>EASY TO CUSTOMIZE</h3>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                            Lorem Ipsum has been the industry's standard dummy text</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single_about">
+                                                    <div class="single_ab_icon">
+                                                        <i class="fa fa-headphones"></i>
+                                                    </div>
+                                                    <div class="single_ab_text">
+                                                        <h3>LIFE TIME SUPPORT</h3>
+                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                            Lorem Ipsum has been the industry's standard dummy text</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-5">
+                                            <div class="single_about_left_img margin-top-40 text-center wow fadeInLeft" data-wow-duration=".6s">
+                                                <img src="assets/images/abright.png" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="about_skill_area">
+                                            <div class="col-sm-6">
+                                                <div class="about_tabe">
+                                                    <!-- Nav tabs -->
+                                                    <ul class="about_tabe_menu" role="tablist">
+                                                        <li role="presentation" class="active"><a href="#mission" aria-controls="mission" role="tab" data-toggle="tab">OUR MISSION</a></li>
+                                                        <li role="presentation"><a href="#goal" aria-controls="goal" role="tab" data-toggle="tab">OUR GOAL</a></li>
+                                                        <li role="presentation"><a href="#achivements" aria-controls="achivements" role="tab" data-toggle="tab">ACHIVEMENTS</a></li>
+                                                    </ul>
+
+                                                    <!-- Tab panes -->
+                                                    <div class="tab-content">
+                                                        <div role="tabpanel" class="tab-pane active" id="mission">
+                                                            <div class="single_about_tab">
+                                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                                                    when an unknown printer took a galley type a scrambled it to make a type specimen book. 
+                                                                    It has survived not only five centuries,</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="goal">
+                                                            <div class="single_about_tab">
+                                                                <p>222Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                                                    when an unknown printer took a galley type a scrambled it to make a type specimen book. 
+                                                                    It has survived not only five centuries,</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="achivements">
+                                                            <div class="single_about_tab">
+                                                                <p>333Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                                                    when an unknown printer took a galley type a scrambled it to make a type specimen book. 
+                                                                    It has survived not only five centuries,</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to love our client</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="about_skill">
+                                                    <div class="skillbar" data-percent="79%">
+                                                        <div class="skillbar-title"><h3 class="blue">PHOTOSHOP</h3><span class="sm-text">79%</span></div>
+                                                        <div class="skillbar-bar blue"></div>
+                                                    </div>
+
+                                                    <div class="skillbar" data-percent="90%">
+                                                        <div class="skillbar-title"><h3 class="blue">HTML/CSS</h3><span class="sm-text">90%</span></div>
+                                                        <div class="skillbar-bar blue"></div>
+                                                    </div>
+
+                                                    <div class="skillbar" data-percent="69%">
+                                                        <div class="skillbar-title"><h3 class="blue">JAVASCRIPT</h3><span class="sm-text">69%</span></div>
+                                                        <div class="skillbar-bar blue"></div>
+                                                    </div>
+
+                                                    <div class="skillbar" data-percent="92%">
+                                                        <div class="skillbar-title"><h3 class="blue">WORDPRESS</h3><span class="sm-text">92%</span></div>
+                                                        <div class="skillbar-bar blue"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="counter" class="counter">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">  
+                            <div class="col-sm-12">               
+                                <div class="main_counter_area text-center">
+
+                                    <div class="row">
+                                        <div class="single_counter border_right">
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">561</h2>
+                                                    <i class="icon icon-thumbs-up"></i>
+                                                    <p class="margin-top-20">CREATIVE DESIGN</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="single_counter">
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">25</h2>
+                                                    <i class="icon icon-business-3"></i>
+                                                    <p class="margin-top-20">AWARDS WON</p>  
+                                                </div>
+
+                                            </div>
+                                        </div> 
+
+                                        <div class="single_counter">
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">236</h2>
+                                                    <i class="icon icon-people-32"></i>
+                                                    <p class="margin-top-20">HAPPY CLIENTS</p>  
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="single_counter">
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">365</h2>
+                                                    <i class="icon icon-cup"></i>
+                                                    <p class="margin-top-20">CUP OF COFFEE</p> 
+                                                </div>
+
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>  <!-- End of counter section -->
+
+
+            <section id="othersservice" class="othersservice">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_othersservice_area sections">
+                                <div class="row">
+                                    <div class="head_title">
+                                        <h3>OTHER SERVICES</h3>
+                                        <div class="separator"></div>
+                                    </div>
+
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-4">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><i class="fa fa-clock-o"></i></span> CREATIVE DESIGN</h4>
+                                                </div>
+                                                <div class="single_othersservice_content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4> <span><i class="fa fa-picture-o"></i></span> WEB DEVELOPMENT</h4>
+                                                </div>
+                                                <div class="single_othersservice_content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4> <span><i class="fa fa-television"></i></span> VIDEO EDITING</h4>
+                                                </div>
+                                                <div class="single_othersservice_content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-4">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4> <span><i class="fa fa-object-group"></i></span> MARKETING</h4>
+                                                </div>
+                                                <div class="single_othersservice_content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4> <span><i class="fa fa-object-group"></i></span> PHOTOGRAPHY</h4>
+                                                </div>
+                                                <div class="single_othersservice_content">
+
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="single_othersservice">
+                                                <div class="s_ot_i_area">
+                                                    <div class="single_othersservice_icon">
+                                                        <h4><span><i class="fa fa-object-group"></i></span> LOGO DESIGN</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="single_othersservice_content">
+
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>            
+
+
+
+
+            <section id="team" class="team">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_team sections">
+                                <div class="row">
+                                    <div class="head_title">
+                                        <h3>OTHER SERVICES</h3>
+                                        <div class="separator"></div>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_team_content">
+                                            <div class="single_team_img">
+                                                <img src="s.JPG" alt="" />
+                                            </div>
+                                            <div class="single_team_text_overlay">
+                                                <h4>SAQlAIN MUHSTAQ</h4>
+                                                <p>CO-FOUNDER,<br>
+                                                SOFTWARE ENGINEER</p>
+                                                <div class="team_overlay_socail">
+                                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                                    <a href=""><i class="fa fa-pinterest-p"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_team_content">
+                                            <div class="single_team_img">
+                                                <img src="b.JPG" alt="" />
+                                            </div>
+                                            <div class="single_team_text_overlay">
+                                                <h4>BAHADUR ALI</h4>
+                                                <p>CO-FOUNDER,<br>
+                                                SOFTWARE ENGINEER</p>
+                                                <div class="team_overlay_socail">
+                                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                                    <a href=""><i class="fa fa-pinterest-p"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_team_content">
+                                            <div class="single_team_img">
+                                                <img src="cr.jpg" alt="" />
+                                            </div>
+                                            <div class="single_team_text_overlay">
+                                                <h4>SAJJAD ALI</h4>
+                                                <p>MARKETING</p>
+                                                <div class="team_overlay_socail">
+                                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                                    <a href=""><i class="fa fa-pinterest-p"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_team_content">
+                                            <div class="single_team_img">
+                                                <img src="k.JPG" alt="" />
+                                            </div>
+                                            <div class="single_team_text_overlay">
+                                                <h4>KAZIM HASSAN</h4>
+                                                <p>DESIGNER</p>
+                                                <div class="team_overlay_socail">
+                                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                                    <a href=""><i class="fa fa-twitter"></i></a>
+                                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                                    <a href=""><i class="fa fa-pinterest-p"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- End of col-sm-4 -->
+                                </div>
+
+                            </div><!-- End of main team contant -->
+                        </div>
+                    </div><!-- End of row -->
+                </div>
+            </section>
+
+
+            <section id="choose" class="choose">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_choose sections">
+                            <div class="col-sm-6">
+                                <div class="head_title">
+                                    <h3>WHY CHOOSE US</h3>
+                                    <div class="separator"></div>
+                                </div>
+                                <div class="single_choose">
+                                    <div class="single_choose_acording">
+                                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingOne">
+                                                    <h4 class="panel-title">
+                                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                                            <i class="fa fa-picture-o"></i> GREAT DESIGN 
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: auto;">
+                                                    <div class="panel-body">
+                                                        Graphic design is a crucial aspect of visual communication and plays a vital role in the world of branding, marketing, and advertising. It combines the use of typography, imagery, and color to effectively convey ideas and messages to a target audience. Graphic designers utilize a variety of design software, tools, and techniques to create eye-catching and memorable designs that help businesses and organizations stand out and achieve their goals. Whether creating logos, advertisements, or packaging designs, graphic designers must possess an understanding of design principles, color theory, and typography, as well as the ability to communicate ideas and solve visual problems.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingTwo">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            <i class="fa fa-map-signs"></i> RESPONSIVE DESIGN 
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
+                                                    <div class="panel-body">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                                                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+                                                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingThree">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                            <i class="fa fa-bullseye"></i> RATINA READY 
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+                                                    <div class="panel-body">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                                                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+                                                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                                                        culpa qui officia deserunt mollit anim id est laborum.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingThree">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+                                                            <i class="fa fa-umbrella"></i>FREE GOOGLE FONT 
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+                                                    <div class="panel-body">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                                                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+                                                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                                                        culpa qui officia deserunt mollit anim id est laborum.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingThree">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefive" aria-expanded="false" aria-controls="collapseThree">
+                                                            <i class="fa fa-subway"></i>1170 PX GRID BASE 
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive" aria-expanded="false">
+                                                    <div class="panel-body">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                                                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+                                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+                                                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
+                                                        culpa qui officia deserunt mollit anim id est laborum.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="single_choose">
+                                    <div class="single_choose_img">
+                                        <img src="assets/images/choose.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <!-- <section id="portfolio" class="portfolio lightbg">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_portfolio sections">
+                            <div class="col-sm-4">
+                                <div class="head_title">
+                                    <h3>LATEST PROJECT</h3>
+                                    <div class="separator"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-sm-offset-2">
+                                <div id="filters" class="toolbar mb2 mt2">
+                                    <button class="btn-md fil-cat filter active" href=""  data-filter="all">SHOW ALL</button>
+                                    <button class="btn-md fil-cat filter" data-rel="web" data-filter=".web">PHOTOGRAPHY</button>
+                                    <button class="btn-md fil-cat filter" data-rel="flyers" data-filter=".flyers">BRANDING</button> 
+                                    <button class="btn-md fil-cat filter" data-rel="bcards" data-filter=".bcards">GRAPHIC DESIGN</button>
+                                    <div class="separator2"></div>
+                                </div> 
+
+                            </div>
+
+                            <div style="clear:both;"></div>     
+                            <div id="portfoliowork"> 
+                                <div class="single_portfolio tile scale-anm web grid-item-width2" >
+                                    <img src="assets/images/pf1.jpg" alt="" />
+                                    <div class="grid_item_overlay g_overlay_1">
+                                        <a href="assets/images/pf1.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm bcards" >
+                                    <img src="assets/images/pf2.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf2.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm web ">
+                                    <img src="assets/images/pf3.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf3.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm web" >
+                                    <img src="assets/images/pf4.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf4.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm bcards" >
+                                    <img src="assets/images/pf8.jpg" alt="" />  
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf8.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm web" >
+                                    <img src="assets/images/pf9.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf9.jpg" class="portfolio-img"> 
+                                            <i class="fa fa-link"></i>
+                                        </a>
+                                        <a href="#"> 
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                    </div>
+                                </div> 
+                                <div class="single_portfolio tile scale-anm flyers">
+                                    <img src="assets/images/pf5.jpg" alt="" />
+                                    <div class="grid_item_overlay g_overlay_2">
+                                        <a href="assets/images/pf5.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm flyers">
+                                    <img src="assets/images/pf6.jpg" alt="" />
+                                    <div class="grid_item_overlay g_overlay_1">
+                                        <a href="assets/images/pf6.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="single_portfolio tile scale-anm bcards" >
+                                    <img src="assets/images/pf7.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf7.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm flyers">
+                                    <img src="assets/images/pf6.jpg" alt="" />
+                                    <div class="grid_item_overlay g_overlay_1">
+                                        <a href="assets/images/pf6.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="single_portfolio tile scale-anm bcards" >
+                                    <img src="assets/images/pf7.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf7.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div style="clear:both;"></div>  
+                        </div>
+                    </div>
+                </div>
+            </section>  -->
+
+
+
+
+
+
+            <!--            <section id="portfolio" class="portfolio">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="main_portfolio sections">
+                                        <div class="heading_filter_menu">
+                                            <div class="col-sm-4">
+                                                <div class="head_title">
+                                                    <h3>LATEST PROJECT</h3>
+                                                    <div class="separator"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div id="filters" class="toolbar mb2 mt2">
+                                                    <button class="btn fil-cat filter active" href=""  data-filter="all">All</button>
+                                                    <button class="btn fil-cat filter" data-rel="web" data-filter=".web">Websites</button>
+                                                    <button class="btn fil-cat filter" data-rel="flyers" data-filter=".flyers">Flyers</button> 
+                                                    <button class="btn fil-cat filter" data-rel="bcards" data-filter=".bcards">Business Cards</button>
+                                                </div> 
+                                            </div>
+                                        </div>
+            
+                                        <div class="main_portfolio_content text-center">
+                                            <div class="grid">
+                                                <div class="grid-item grid-item--width2">
+                                                    <img src="assets/images/pf1.jpg" alt="" />
+                                                    <div class="grid_item_overlay all_overlay">
+                                                        <a href="assets/images/pf1.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf2.jpg" alt="" />
+                                                    <div class="grid_item_overlay all_overlay">
+                                                        <a href="assets/images/pf2.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf3.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf1.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf4.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf4.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf5.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf5.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item grid-item--width2">
+                                                    <img src="assets/images/pf6.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf6.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf7.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf7.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf8.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf6.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf9.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf7.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>-->
+
+
+            <section id="testimonial" class="testimonial">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_testimonial sections text-center">
+                                <div class="col-md-12" data-wow-delay="0.2s">
+                                    <div class="main_teastimonial_slider text-center">
+
+                                        <div class="single_testimonial">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    <p>As a software engineer in an IT company, I bring a wealth of technical expertise and problem-solving skills to the table. With a deep understanding of programming languages and software development methodologies, I am able to design and implement effective solutions to meet the needs of our clients. As CEO, I am committed to staying at the forefront of technology and leveraging my expertise to drive innovation and growth within our organization. Through collaboration with my team and a focus on delivering results, I am confident in our ability to achieve success and make a meaningful impact in the industry.</p>
+                                                    <div class="single_test_author">
+                                                        <h4>IRFAN ALI <span> -- CEO </span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="single_testimonial">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
+                                                        alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing 
+                                                        hidden in the middle of text. All the Lorem</p>
+                                                    <div class="single_test_author">
+                                                        <h4>JANE GALADRIEL <span> -- CEO TENGKUREP</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="single_testimonial">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have 
+                                                        suffered alteration in some form, by injected humour, or randomised words which don't look even 
+                                                        slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there 
+                                                        isn't anything embarrassing hidden in the middle of text. All the Lorem</p>
+                                                    <div class="single_test_author">
+                                                        <h4>JANE GALADRIEL <span> -- CEO TENGKUREP</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+<!-- 
+            <section id="clogo" class="clogo">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_clogo sections text-center">
+                            <div class="col-sm-2 col-xs-6"> 
+                                <a href=""><img src="assets/images/clogo1.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6"> 
+                                <a href=""><img src="assets/images/clogo2.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6"> 
+                                <a href=""><img src="assets/images/clogo3.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="assets/images/clogo4.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6"> 
+                                <a href=""><img src="assets/images/clogo5.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="assets/images/clogo9.png" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+
+
+
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="contact_contant sections">
+                                    <div class="col-sm-6">
+
+                                        <div class="main_contact_info">
+                                            <div class="head_title">
+                                                <h3>CONTACT INFO</h3>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="contact_info_content">
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-home"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>VISIT US</h3>
+                                                                <p>STP office no 4 skardu</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-envelope-o"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>MAIL US</h3>
+                                                                <p>gaama.codes@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-mobile"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>CALL US</h3>
+                                                                <p>+(92) 355 054 286</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-clock-o"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>WORK HOUR</h3>
+                                                                <p>Mon - Sat: 08 Am - 10 Pm</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="col-sm-6">
+                                        <div class="head_title">
+                                            <h3>LEAVE MESSAGE</h3>
+                                            <div class="separator"></div>
+                                        </div>
+                                        <div class="single_contant_left">
+                                            <form action="#" id="formid">
+                                                <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="name" placeholder="First Name" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="name" placeholder="Last Name" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
+                                                </div>
+
+                                                <div class="">
+                                                    <input type="submit" value="Submit" class="btn btn-primary">
+                                                </div>
+                                                <!--</div>--> 
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>  <!-- End of contact section -->
+
+
+
+            <section id="maps" class="maps">
+                <div class="map-overlay">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="main_maps text-center">
+                                <div class="col-sm-12 no-padding">
+                                    <div class="map_canvas_icon">
+                                        <i class="fa fa-map-marker" onClick="showmap()"></i>
+                                        <h2 onClick="showmap()">FIND US ON GOOGLE MAP</h2>
+                                    </div>
+                                    <div id="map_canvas"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="footer" class="footer_widget">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="main_widget">
+                                        <div class="col-sm-3 col-xs-12">
+                                            <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+                                                <div class="footer_logo">
+                                                    <img src="logo.png" alt="" />
+                                                </div>
+                                                <p>Our company provides technology solutions and services to businesses and individuals.</p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-3  col-xs-12">
+                                            <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                                <div class="footer_title">
+                                                    <h4>SITEMAP</h4>
+                                                    <div class="separator"></div>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="">Services</a></li>
+                                                    <li><a href="">About Us</a></li>
+                                                    <li><a href="">Our Team</a></li>
+                                                    <li><a href="">Portfolio</a></li>
+                                                </ul> 
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-sm-3  col-xs-12">
+                                            <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                                <div class="footer_title">
+                                                    <h4>ACHIVES</h4>
+                                                    <div class="separator"></div>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="">January 20</a></li>
+                                                    <li><a href="">February 2015</a></li>
+                                                    <li><a href="">March 2015</a></li>
+                                                    <li><a href="">April 2015</a></li>
+                                                </ul> 
+                                            </div>
+                                        </div> -->
+
+                                        <div class="col-sm-3 col-xs-12">
+                                            <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                                <div class="footer_title">
+                                                    <h4>NEWSLETTER</h4>
+                                                    <div class="separator"></div>
+                                                </div>
+
+                                                <div class="footer_subcribs_area">
+                                                    <p>Sign up for our mailing list to get latest updates and offers.</p>
+                                                    <form class="navbar-form navbar-left" role="search">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" placeholder="Search">
+                                                            <button type="submit" class="submit_btn"></button>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <!-- START SCROLL TO TOP  -->
+
+        <div class="scrollup">
+            <a href="#"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+        <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+        <script src="assets/js/jquery.magnific-popup.js"></script>
+        <script src="assets/js/jquery.mixitup.min.js"></script>
+        <script src="assets/js/jquery.easing.1.3.js"></script>
+        <script src="assets/js/jquery.masonry.min.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="http://maps.google.com/maps/api/js"></script>
+        <script src="assets/js/gmaps.min.js"></script>
+
+
+        <script>
+
+                                            function showmap() {
+                                                var mapOptions = {
+                                                    zoom: 8,
+                                                    scrollwheel: false,
+                                                    center: new google.maps.LatLng(-34.397, 150.644),
+                                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                                };
+                                                var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+                                            }
+        </script>
+
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
 </html>

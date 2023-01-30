@@ -1008,6 +1008,7 @@ input::-ms-input-placeholder {
 .team .single_team_content .single_team_img img{
     width:100%;
     transition: 0.6s;
+    height: 55vh;
 
 }
 .team .single_team_content .single_team_img{
